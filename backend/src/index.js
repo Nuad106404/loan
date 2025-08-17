@@ -539,15 +539,20 @@ app.get('/', (req, res) => {
 // API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
-// Mount loan routes without file upload middleware first
-app.use('/api/loans', loanRoutes);
 
-// Then mount specific file upload routes with middleware
-app.use('/api/loans/id-verification', upload.fields([
+// Mount specific file upload routes with middleware BEFORE general loan routes
+app.post('/api/loans/id-verification', upload.fields([
   { name: 'idCardFront', maxCount: 1 },
   { name: 'idCardBack', maxCount: 1 },
   { name: 'selfieWithId', maxCount: 1 }
-]));
+]), async (req, res, next) => {
+  // Import the controller function
+  const { saveIdVerification } = await import('./controllers/loanController.js');
+  return saveIdVerification(req, res, next);
+});
+
+// Mount loan routes without file upload middleware after specific upload routes
+app.use('/api/loans', loanRoutes);
 
 // Logout API endpoint (fallback for when socket is unavailable)
 app.post('/api/auth/logout', async (req, res) => {

@@ -35,8 +35,8 @@ router.post('/family-contact', saveFamilyContact);
 // This route is currently disabled as the function is not available
 // router.post('/loan-details', saveLoanDetails);
 
-// ID verification endpoint
-router.post('/id-verification', saveIdVerification);
+// ID verification endpoint - handled directly in index.js with file upload middleware
+// router.post('/id-verification', saveIdVerification);
 
 // Enable loan application creation from calculator
 router.post('/create-application', createLoanApplication);
