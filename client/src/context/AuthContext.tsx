@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import { User, login as authLogin, logout as authLogout, getCurrentUser } from '../services/authService';
 
-const API_URL = 'http://localhost:5001/api/auth';  // Make sure this matches the authService API_URL
+const API_URL = `${import.meta.env.VITE_API_URL || 'http://localhost:5001'}/api/auth`;  // Make sure this matches the authService API_URL
 
 interface TokenValidationResponse {
   status: 'success' | 'error';

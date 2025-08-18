@@ -3,7 +3,7 @@ import {
   getAuthHeaders
 } from '../shared/utils/authUtils';
 
-const API_URL = 'http://localhost:5001/api';
+const API_URL = `${import.meta.env.VITE_BACKEND_URL || 'http://localhost:5001'}/api`;
 
 // Admin interface for TypeScript
 export interface AdminUser {

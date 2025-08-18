@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 // API URLs for backend
-const PUBLIC_API_URL = 'http://localhost:5001/api/public';
-const ADMIN_API_URL = 'http://localhost:5001/api/admin';
+const PUBLIC_API_URL = `${import.meta.env.VITE_BACKEND_URL || 'http://localhost:5001'}/api/public`;
+const ADMIN_API_URL = `${import.meta.env.VITE_BACKEND_URL || 'http://localhost:5001'}/api/admin`;
 
 export interface InterestRate {
   _id: string;

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // API Configuration
-const API_URL = 'http://localhost:5001/api/auth';
+const API_URL = `${import.meta.env.VITE_API_URL || 'http://localhost:5001'}/api/auth`;
 const API_TIMEOUT = 5000; // 5 seconds
 
 // Local caching parameters

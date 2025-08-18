@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
             </div>
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 transform hover:scale-105 transition-all duration-300">
               <div className="text-2xl font-bold mb-2 text-white">อัตราดอกเบียต่ำ</div>
-              <p className="text-blue-100">อัตราดอกเบียที่แข่งขันได้เริ่มต้นที่ 5.99% ต่อปี</p>
+              <p className="text-blue-100">อัตราดอกเบียที่แข่งขันได้เริ่มต้นที่ 2.90% ต่อปี</p>
             </div>
           </div>
         </div>

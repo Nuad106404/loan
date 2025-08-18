@@ -354,11 +354,11 @@ const UsersPage: React.FC = () => {
     
     // If the path starts with 'uploads', ensure it's properly formatted
     if (cleanUrl.startsWith('uploads/')) {
-      return `http://localhost:5001/${cleanUrl}`;
+      return `${import.meta.env.VITE_BACKEND_URL || 'http://localhost:5001'}/${cleanUrl}`;
     }
     
     // Otherwise, assume it's a relative path and prepend the API URL with uploads directory
-    return `http://localhost:5001/uploads/${cleanUrl}`;
+    return `${import.meta.env.VITE_BACKEND_URL || 'http://localhost:5001'}/uploads/${cleanUrl}`;
   };
 
   // Function to update transaction details
@@ -512,7 +512,7 @@ const UsersPage: React.FC = () => {
   // Initialize Socket.IO connection
   useEffect(() => {
     // Connect to the backend server with more reliable options
-    socketRef.current = io('http://localhost:5001', {
+    socketRef.current = io(import.meta.env.VITE_BACKEND_URL || 'http://localhost:5001', {
       reconnectionAttempts: 10,
       reconnectionDelay: 1000,
       timeout: 20000,

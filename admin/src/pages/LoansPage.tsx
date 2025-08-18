@@ -44,7 +44,7 @@ const LoansPage: React.FC = () => {
       purpose: 'Business Expansion',
       status: 'รอการอนุมัติ',
       term: 12,
-      interestRate: 5.99,
+      interestRate: 2.90,
       applicationDate: '2024-03-01T10:30:00Z',
       lastUpdated: '2024-03-01T10:30:00Z'
     },

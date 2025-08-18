@@ -7,7 +7,7 @@ const getAuthToken = (): string | null => {
 
 const API_URL = process.env.NODE_ENV === 'production' 
   ? '/api' 
-  : 'http://localhost:5000/api';
+  : `${import.meta.env.VITE_API_URL || 'http://localhost:5001'}/api`;
 
 // Define interfaces that match MongoDB schema structure
 export interface PersonalInformation {
