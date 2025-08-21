@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link to="/" className="flex-shrink-0 flex items-center">
-                <img src="/Thailand-Address/logo.png" alt="Lease It Thailand Logo" className="h-8 w-10" />
+                <img src="https://i.postimg.cc/mDt6rdyR/logo.png" alt="Lease It Thailand Logo" className="h-8 w-10" />
                 <span className="ml-2 text-xl font-bold text-blue-900">Lease It Thailand</span>
               </Link>
             </div>

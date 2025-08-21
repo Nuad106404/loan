@@ -32,7 +32,7 @@ export const uploadFile = async (file) => {
     await fs.promises.writeFile(filePath, file.buffer);
 
     // Return the relative URL
-    return `/uploads/${fileName}`;
+    return fileName;
   } catch (error) {
     console.error('Error uploading file:', error);
     throw new Error('Failed to upload file');

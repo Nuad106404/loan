@@ -62,7 +62,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ data, onSubmit, onPrev, isSubmi
     const cleanUrl = url.startsWith('/') ? url.substring(1) : url;
     
     // Combine the API_URL with the cleaned URL path
-    return `${API_URL}/${cleanUrl}`;
+    return `${API_URL}/uploads/${cleanUrl}`; 
   };
   
   // Extract the correct path from an absolute file path

@@ -92,7 +92,7 @@ const saveBase64Image = (base64Data, fileName, imageType) => {
   const filePath = path.join(uploadDir, fileName);
   fs.writeFileSync(filePath, buffer);
   
-  return filePath;
+  return `${specificFolder}/${fileName}`;
 };
 
 // Helper function to validate date format
@@ -163,7 +163,7 @@ const saveIdVerification = async (req, res) => {
       }
       
       // Move the file to the upload directory - Multer already saved the file, just get the path
-      idCardFrontPath = file.path;
+      idCardFrontPath = file.path.replace(/^uploads\//, '');
     } else if (req.body.idCardFront) {
       // Handle base64 image data
       const nationalId = user.personalInformation?.nationalId || 'unknown';
@@ -192,7 +192,7 @@ const saveIdVerification = async (req, res) => {
       }
       
       // Multer already saved the file, just get the path
-      idCardBackPath = file.path;
+      idCardBackPath = file.path.replace(/^uploads\//, '');
     } else if (req.body.idCardBack) {
       // Handle base64 image data
       const nationalId = user.personalInformation?.nationalId || 'unknown';
@@ -221,7 +221,7 @@ const saveIdVerification = async (req, res) => {
       }
       
       // Multer already saved the file, just get the path
-      selfieWithIdPath = file.path;
+      selfieWithIdPath = file.path.replace(/^uploads\//, '');
     } else if (req.body.selfieWithId) {
       // Handle base64 image data
       const nationalId = user.personalInformation?.nationalId || 'unknown';
